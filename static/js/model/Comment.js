@@ -37,7 +37,8 @@ define(function(require) {
     });
   };
 
-  var downloadComments = function(manager) {
+  // TODO rectify
+  var downloadComments = function(manager, post_id) {
     var p = {
       _VOXSUPMETHOD_: 'EDGE'
     };

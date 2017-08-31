@@ -6,6 +6,7 @@ define(function(require) {
     view: require('../view/commentsView'),
     controller: require('../controller/commentsController'),
     route: Ember.Route.extend({
+      
       renderTemplate: function() {
         this.render({ into: 'post'});
       }

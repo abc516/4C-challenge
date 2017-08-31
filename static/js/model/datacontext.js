@@ -19,7 +19,8 @@ define(function(require) {
 
   var models = {
     User: require('./User'),
-    Post: require('./Post')
+    Post: require('./Post'),
+    Comment: require('./Comment')
   };
 
   for(key in models) {
@@ -37,6 +38,10 @@ window.manager = manager;
     },
     downloadPost: function(post_id) {
       return models.Post.downloadPost(manager, post_id);
+    },
+    // TODO rectify
+    downloadComments: function(post_id){
+      return models.Comment.downloadComments(manager, post_id)
     }
   };
 });
