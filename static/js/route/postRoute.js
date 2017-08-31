@@ -19,7 +19,7 @@ define(function(require) {
       },
       renderTemplate: function() {
         this.render({ into: 'root', outlet: 'posts' });
-      }      
+      }
     })
   });
 });

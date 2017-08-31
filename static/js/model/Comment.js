@@ -1,11 +1,12 @@
 define(function(require) {
+  //TODO fill in details
   var breeze = require('breeze');
-  var Q = require('Q');
+  // var Q = require('Q');
   var DT = breeze.DataType;
 
   var initialize = function(metadataStore) {
     metadataStore.addEntityType({
-      shortName: 'Post',
+      shortName: 'Comment',
       dataProperties: {
         id: {
           dataType: DT.String,
@@ -36,7 +37,7 @@ define(function(require) {
     });
   };
 
-  var downloadPosts = function(manager) {
+  var downloadComments = function(manager) {
     var p = {
       _VOXSUPMETHOD_: 'EDGE'
     };
@@ -45,18 +46,8 @@ define(function(require) {
     return manager.executeQuery(q);
   };
 
-  var downloadPost = function(manager, post_id) {
-    var p = {
-      _VOXSUPMETHOD_: 'OBJ'
-    };
-
-    q = breeze.EntityQuery.from(post_id).withParameters(p).toType('Post');
-    return manager.executeQuery(q);
-  };
-
   return {
     initialize: initialize,
-    downloadPosts: downloadPosts,
-    downloadPost: downloadPost
+    downloadComments: downloadComments
   };
 });

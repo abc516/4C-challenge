@@ -10,7 +10,7 @@ define(function(require) {
       Ember.assert('key must be specified', key);
       Ember.assert('route must be specified', params.route);
 
-      var prefix = key.replace('/','_').camelize().capitalize();
+      var prefix = key.replace('/', '_').camelize().capitalize();
       var routeName = '%@Route'.fmt(prefix);
       Ember.assert('route name collision', this.get(routeName) === undefined);
       this.set(routeName, params.route);
